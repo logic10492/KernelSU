@@ -32,7 +32,7 @@ DRIVER_MAKEFILE=$DRIVER_DIR/Makefile
 grep -q "kernelsu" $DRIVER_MAKEFILE || echo "obj-y += kernelsu/" >> $DRIVER_MAKEFILE
 
 echo "Modify the kernel source code for support KernelSu"
-
+cd  "$GKI_ROOT"
 mv  "$GKI_ROOT/KernelSU/KernelSU_support.patch  $GKI_ROOT/KernelSU_support.patch"
 patch -p0< KernelSU_support.patch
 
